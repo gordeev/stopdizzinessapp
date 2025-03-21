@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Приложение от укачивания</string>
+    <string name="settings">Настройки</string>
+    <string name="enter_margin_hint">Введите отступ (пиксели)</string>
+    <string name="overlay_transparency_label">Прозрачность точек</string>
+    <string name="sensitivity_label">Чувствительность</string>
+    <string name="choose_overlay_color">Выберите цвет точек</string>
+    <string name="red">Красный</string>
+    <string name="blue">Синий</string>
+    <string name="green">Зелёный</string>
+    <string name="white">Белый</string>
+    <string name="enable_overlay">Включить</string>
+    <string name="disable_overlay">Отключить</string>
+</resources>

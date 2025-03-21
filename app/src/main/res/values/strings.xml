@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stop Dizziness</string>
+    <string name="settings">Settings</string>
+    <string name="enter_margin_hint">Enter margin (pixels)</string>
+    <string name="overlay_transparency_label">Overlay Transparency</string>
+    <string name="sensitivity_label">Sensitivity</string>
+    <string name="choose_overlay_color">Choose Overlay Color</string>
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="green">Green</string>
+    <string name="white">White</string>
+    <string name="enable_overlay">Enable</string>
+    <string name="disable_overlay">Disable</string>
+</resources>
