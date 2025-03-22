@@ -16,6 +16,10 @@ class DotOverlayView(context: Context) : View(context) {
     private var sensorX: Float = 0f
     private var sensorY: Float = 0f
 
+    private var smoothX = 0f
+    private var smoothY = 0f
+    private val smoothingFactor = 0.2f // Чем меньше, тем плавнее изменения
+
     // Настройка кисти для рисования точек
     private val paint = Paint().apply {
         color = dotColor
@@ -37,8 +41,10 @@ class DotOverlayView(context: Context) : View(context) {
 
     // Обновление данных с акселерометра
     fun updateSensorData(x: Float, y: Float) {
-        sensorX = x
-        sensorY = y
+        smoothX = smoothX + smoothingFactor * (x - smoothX)
+        smoothY = smoothY + smoothingFactor * (y - smoothY)
+        sensorX = smoothX
+        sensorY = smoothY
         invalidate()
     }
 
@@ -48,13 +54,13 @@ class DotOverlayView(context: Context) : View(context) {
         val height = canvas.height
 
         // Коэффициент для смещения точек, подбирается экспериментально
-        val factor = 3f
+        val factor = 5f
         val offsetX = sensorX * factor
         val offsetY = sensorY * factor
 
         // Масштабирование размера точек в зависимости от величины ускорения
         val acceleration = sqrt(sensorX * sensorX + sensorY * sensorY)
-        val scaleFactor = 1 + (acceleration / 10f)
+        val scaleFactor = 1 + (acceleration / 5f)
         val radius = baseRadius * scaleFactor
 
         // Вычисляем вертикальные позиции для трёх точек (равномерно)
